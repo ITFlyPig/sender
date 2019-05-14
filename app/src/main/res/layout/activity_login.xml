@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etl_phone"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true">
+            <EditText
+                android:inputType="phone"
+                android:id="@+id/et_phone"
+                android:hint="请输入手机号"
+                android:textSize="@dimen/wordSize_middle"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etl_password"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            app:passwordToggleEnabled="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_password"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:textSize="@dimen/wordSize_middle"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:id="@+id/tv_login"
+            style="@style/btn_bottom_submit"
+            android:background="@drawable/selector_btn_bg"
+            android:text="登陆" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册账号"
+            android:textColor="@color/text_color_normal"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:textSize="@dimen/wordSize_small"/>
+    </LinearLayout>
+
+</RelativeLayout>

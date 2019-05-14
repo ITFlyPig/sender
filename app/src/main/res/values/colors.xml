@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_bg">#eeeeee</color>
+
+    <color name="color_btn_text_normal">@color/white</color>
+    <color name="color_btn_text_pressed">#534440</color>
+    <color name="color_btn_text_unable">#999999</color>
+
+    <color name="color_btn_normal">@color/colorPrimary</color>
+    <color name="color_btn_pressed">@color/colorPrimaryDark</color>
+    <color name="color_btn_unable">#E3E3E3</color>
+
+    <color name="color_divider">#bbbbbb</color>
+    <!--正常的文字颜色-->
+    <color name="text_color_normal">#1E1E1E</color>
+    <!--灰色的提示性文字颜色-->
+    <color name="text_color_gray">#999999</color>
+
+
+</resources>

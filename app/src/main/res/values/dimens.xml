@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="wordSize_big">20sp</dimen>
+    <dimen name="wordSize_nomal">16sp</dimen>
+    <dimen name="wordSize_middle">15sp</dimen>
+    <dimen name="wordSize_small">14sp</dimen>
+</resources>
