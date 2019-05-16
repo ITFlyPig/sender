@@ -76,8 +76,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_timer"
-                android:textSize="@dimen/wordSize_middle"
-                android:textColor="@color/text_color_normal"
+                style="@style/btn"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:textSize="@dimen/wordSize_small"
                 android:text="发送验证码"/>
 
         </LinearLayout>

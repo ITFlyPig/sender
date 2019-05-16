@@ -21,5 +21,7 @@
     <!--灰色的提示性文字颜色-->
     <color name="text_color_gray">#999999</color>
 
+    <color name="gray_dialog_bg">#999999</color>
+
 
 </resources>
