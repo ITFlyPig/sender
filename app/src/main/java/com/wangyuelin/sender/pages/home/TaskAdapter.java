@@ -42,8 +42,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         SendTaskBean bean = tasks.get(position);
         holder.tvName.setText(bean.getName());
         String statusStr = parseStatus(bean.getStatus());
-        setText(holder.tvStatus, statusStr);
-        setText(holder.tvPhone, TextUtils.isDigitsOnly(bean.getRecvPhone()) ? null : "接收手机：" + bean.getRecvPhone());
+        setText(holder.tvStatus, TextUtils.isEmpty(statusStr) ? null : "状态：" + statusStr);
+        setText(holder.tvPhone, TextUtils.isEmpty(bean.getRecvPhone()) ? null : "接收手机：" + bean.getRecvPhone());
         setText(holder.tvLocation, TextUtils.isEmpty(bean.getUserSelLocation()) ? null : "接收地址：" + bean.getUserSelLocation());
         setText(holder.tvTime, TextUtils.isEmpty(bean.getUserSelTime()) ? null : "接收时间：" + bean.getUserSelTime());
 
