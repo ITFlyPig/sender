@@ -2,6 +2,7 @@ package com.wangyuelin.sender.pages;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -86,6 +87,7 @@ public class SelTimeLocActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_back:
+                finish();
                 break;
             case R.id.tv_loc_sel:
                 selLoc();
