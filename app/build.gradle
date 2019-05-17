@@ -45,4 +45,15 @@ dependencies {
 
     //Gson
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //刷新和加载superswiperefreshlayout
+    implementation 'com.github.nuptboyzhb.lib.uikit:superswiperefreshlayout:1.0.0'
+
+    //下拉刷新和加载更多ultimaterecyclerview
+    implementation 'com.marshalchen.ultimaterecyclerview:library:0.7.6'
+
+    implementation 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+
+
+
 }

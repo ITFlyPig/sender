@@ -36,7 +36,6 @@ public abstract class FastJsonCallback<T> extends ChCallBack<T> {
     @Override
     public T convertResponse(Response response) throws IOException {
 
-
         Type genType = getClass().getGenericSuperclass(); //返回直接继承的父类
         Type[] params = ((ParameterizedType) genType).getActualTypeArguments();//获取泛型中的实际类型
         //得到第二层泛型的所有类型：FastBaseResp<User>

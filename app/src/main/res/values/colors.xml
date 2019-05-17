@@ -18,10 +18,15 @@
     <color name="color_divider">#bbbbbb</color>
     <!--正常的文字颜色-->
     <color name="text_color_normal">#1E1E1E</color>
+
+    <!--比普通浅 比提示颜色深  的颜色-->
+    <color name="text_color_secnd">#666666</color>
+
     <!--灰色的提示性文字颜色-->
     <color name="text_color_gray">#999999</color>
 
     <color name="gray_dialog_bg">#999999</color>
+
 
 
 </resources>

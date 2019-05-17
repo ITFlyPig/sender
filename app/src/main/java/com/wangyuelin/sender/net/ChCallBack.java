@@ -20,7 +20,7 @@ public abstract class ChCallBack<T> extends AbsCallback<T> {
 
     @Override
     public void onError(Response<T> response) {
-        onErrorBiz(response != null ? response.code() : 500, "网络不给力");
+        onErrorBiz(response != null ? response.code() : 500, response.getException().getLocalizedMessage());
     }
 
     @Override
