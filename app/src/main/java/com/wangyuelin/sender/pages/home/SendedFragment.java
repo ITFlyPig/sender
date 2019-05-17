@@ -1,6 +1,7 @@
 package com.wangyuelin.sender.pages.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,7 +29,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WaitSendFragment extends Fragment {
+public class SendedFragment extends Fragment {
     @BindView(R.id.ul_recyclerview)
     PullLoadMoreRecyclerView ulRecyclerview;
 
@@ -41,8 +42,8 @@ public class WaitSendFragment extends Fragment {
     RelativeLayout rlWhole;
 
 
-    public static WaitSendFragment newInstance(Bundle bundle) {
-        WaitSendFragment fragment = new WaitSendFragment();
+    public static SendedFragment newInstance(Bundle bundle) {
+        SendedFragment fragment = new SendedFragment();
         fragment.setArguments(bundle);
         return fragment;
 
@@ -64,6 +65,7 @@ public class WaitSendFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_wait_send, container, false);
         ButterKnife.bind(this, v);
         initView();
+        Log.d("SendedFragment", "onCreateView");
         return v;
     }
 
@@ -94,7 +96,7 @@ public class WaitSendFragment extends Fragment {
     }
 
     private void getData(boolean isFirst) {
-        int status = TaskStatus.WAIT_SEND;
+        int status = TaskStatus.SENDED;
         OkGo.<FastBaseResp<TaskResp>>get(Server.HOST + Urls.GET_TASKS)
                 .params("status", status)
                 .params("curPage", curPage)
@@ -112,11 +114,11 @@ public class WaitSendFragment extends Fragment {
                                 tasks.addAll(resp.res.tasks);
                             }
 
-
                             if (!resp.res.hasMore) {
                                 ulRecyclerview.setPushRefreshEnable(false);
                             }
                         }
+
 
                         //数据为空
                         if (tasks.size() == 0) {

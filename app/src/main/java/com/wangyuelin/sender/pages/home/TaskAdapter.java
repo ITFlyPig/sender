@@ -5,10 +5,12 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wangyuelin.sender.R;
 import com.wangyuelin.sender.bean.SendTaskBean;
+import com.wangyuelin.sender.pages.SelTimeLocActivity;
 import com.wangyuelin.sender.util.TaskStatus;
 
 import java.util.List;
@@ -46,6 +48,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         setText(holder.tvPhone, TextUtils.isEmpty(bean.getRecvPhone()) ? null : "接收手机：" + bean.getRecvPhone());
         setText(holder.tvLocation, TextUtils.isEmpty(bean.getUserSelLocation()) ? null : "接收地址：" + bean.getUserSelLocation());
         setText(holder.tvTime, TextUtils.isEmpty(bean.getUserSelTime()) ? null : "接收时间：" + bean.getUserSelTime());
+        holder.llWhole.setOnClickListener(v -> {
+            SelTimeLocActivity.open(context, bean);
+        });
+
 
     }
 
@@ -65,6 +71,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         TextView tvTime;
         @BindView(R.id.tv_location)
         TextView tvLocation;
+        @BindView(R.id.whole)
+        LinearLayout llWhole;
 
 
         public ViewHolder(@NonNull View v) {

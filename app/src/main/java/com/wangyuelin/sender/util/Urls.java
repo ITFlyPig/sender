@@ -6,5 +6,6 @@ public interface Urls {
     String REGISTER = "user/register"; //注册的url
     String SEND = "user/send"; //发送验证码
     String GET_TASKS = "task/getTasks";//获取任务
+    String UPDATE_TASK = "task/updateTask";//更新任务
 
 }

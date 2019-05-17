@@ -1,6 +1,8 @@
 package com.wangyuelin.sender.bean;
 
-public class SendTaskBean {
+import java.io.Serializable;
+
+public class SendTaskBean implements Serializable {
     private int id;
     private String name; //任务的名称
     private long time;  //创建时间、配送时间、完成时间

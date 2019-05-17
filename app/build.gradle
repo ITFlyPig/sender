@@ -46,13 +46,17 @@ dependencies {
     //Gson
     implementation 'com.google.code.gson:gson:2.8.5'
 
-    //刷新和加载superswiperefreshlayout
+    //刷新和加载superswiperefreshlayout 可用到ScrollView等
     implementation 'com.github.nuptboyzhb.lib.uikit:superswiperefreshlayout:1.0.0'
 
-    //下拉刷新和加载更多ultimaterecyclerview
-    implementation 'com.marshalchen.ultimaterecyclerview:library:0.7.6'
-
+    //下拉刷新和上拉加载更多recyclerview
     implementation 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+
+    //选择器
+    implementation 'com.github.gzu-liyujiang.AndroidPicker:WheelPicker:1.5.6'
+
+    //二维码扫描
+    implementation 'cn.yipianfengye.android:zxing-library:2.2'
 
 
 

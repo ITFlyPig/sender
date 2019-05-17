@@ -28,21 +28,22 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class WaitSendFragment extends Fragment {
+public class SendingFragment extends Fragment {
     @BindView(R.id.ul_recyclerview)
     PullLoadMoreRecyclerView ulRecyclerview;
+    @BindView(R.id.rl_whole)
+    RelativeLayout rlWhole;
 
     StatusUIHelper statusUIHelper;
     int curPage = 1;
     int pageSize = 10;
     List<SendTaskBean> tasks;
     TaskAdapter adapter;
-    @BindView(R.id.rl_whole)
-    RelativeLayout rlWhole;
 
 
-    public static WaitSendFragment newInstance(Bundle bundle) {
-        WaitSendFragment fragment = new WaitSendFragment();
+
+    public static SendingFragment newInstance(Bundle bundle) {
+        SendingFragment fragment = new SendingFragment();
         fragment.setArguments(bundle);
         return fragment;
 
@@ -94,7 +95,7 @@ public class WaitSendFragment extends Fragment {
     }
 
     private void getData(boolean isFirst) {
-        int status = TaskStatus.WAIT_SEND;
+        int status = TaskStatus.SENDING;
         OkGo.<FastBaseResp<TaskResp>>get(Server.HOST + Urls.GET_TASKS)
                 .params("status", status)
                 .params("curPage", curPage)

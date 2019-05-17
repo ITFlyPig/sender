@@ -36,8 +36,8 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         fragments = new ArrayList<>();
         fragments.add(WaitSendFragment.newInstance(null));
-        fragments.add(WaitSendFragment.newInstance(null));
-        fragments.add(WaitSendFragment.newInstance(null));
+        fragments.add(SendingFragment.newInstance(null));
+        fragments.add(SendedFragment.newInstance(null));
 
         adapter = new ViewPagerAdapter(getChildFragmentManager() ,fragments, titles);
     }
@@ -60,6 +60,8 @@ public class HomeFragment extends Fragment {
 
         //初始化ViewPager
         viewpager.setAdapter(adapter);
+        //设置缓存的视图数量为2
+        viewpager.setOffscreenPageLimit(2);
         tablayout.setupWithViewPager(viewpager);
 
 
