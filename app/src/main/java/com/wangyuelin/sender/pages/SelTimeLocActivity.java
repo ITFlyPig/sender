@@ -213,7 +213,9 @@ public class SelTimeLocActivity extends AppCompatActivity implements View.OnClic
                     public void onSuccessBiz(FastBaseResp<String> resp) {
                         if (resp.isSuccessful()) {
                             statusUIHelper.showToast(resp.message);
+
                         }
+                        finish();
 
                     }
 

@@ -54,7 +54,7 @@ public class SendingFragment extends Fragment {
         super.onCreate(savedInstanceState);
         statusUIHelper = new StatusUIHelper();
         tasks = new ArrayList<>();
-        adapter = new TaskAdapter(tasks, getContext());
+        adapter = new TaskAdapter(tasks, getContext(), TaskStatus.SENDING);
 
         getData(true);
     }

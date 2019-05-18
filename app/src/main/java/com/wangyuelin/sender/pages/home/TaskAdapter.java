@@ -25,10 +25,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     List<SendTaskBean> tasks;
     Context context;
     LayoutInflater inflater;
+    int status;
 
-    public TaskAdapter(List<SendTaskBean> tasks, Context context) {
+    public TaskAdapter(List<SendTaskBean> tasks, Context context, int status) {
         this.tasks = tasks;
         this.context = context;
+        this.status = status;
         inflater = LayoutInflater.from(context);
     }
 
@@ -49,7 +51,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         setText(holder.tvLocation, TextUtils.isEmpty(bean.getUserSelLocation()) ? null : "接收地址：" + bean.getUserSelLocation());
         setText(holder.tvTime, TextUtils.isEmpty(bean.getUserSelTime()) ? null : "接收时间：" + bean.getUserSelTime());
         holder.llWhole.setOnClickListener(v -> {
-            SelTimeLocActivity.open(context, bean);
+            if (status == TaskStatus.WAIT_SEND) {
+                SelTimeLocActivity.open(context, bean);
+            }
         });
 
 

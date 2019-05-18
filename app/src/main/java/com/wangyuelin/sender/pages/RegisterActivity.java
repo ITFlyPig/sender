@@ -11,12 +11,15 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.lzy.okgo.OkGo;
+import com.wangyuelin.sender.MainActivity;
 import com.wangyuelin.sender.R;
 import com.wangyuelin.sender.helper.StatusUIHelper;
 import com.wangyuelin.sender.helper.TitleHelper;
 import com.wangyuelin.sender.net.FastBaseResp;
 import com.wangyuelin.sender.net.FastJsonCallback;
+import com.wangyuelin.sender.util.Constant;
 import com.wangyuelin.sender.util.RegexUtils;
+import com.wangyuelin.sender.util.SPUtils;
 import com.wangyuelin.sender.util.Server;
 import com.wangyuelin.sender.util.Urls;
 
@@ -142,15 +145,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .execute(new FastJsonCallback<FastBaseResp<Map<String, String>>>() {
                     @Override
                     public void onSuccessBiz(FastBaseResp<Map<String, String>> resp) {
-                        if (resp.res != null) {
-                            if (TextUtils.equals(resp.res.get("loginSuccess"), String.valueOf(1))) {//登陆成功
-                                String tip = resp.res.get("tip");
-                                statusUIHelper.showToast(tip);
-                                String token = resp.res.get("token");//获取token
-                                return;
-                            }
-                        }
 
+                        if (resp.isSuccessful()) {
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+                        statusUIHelper.showToast(resp.message);
                     }
 
                     @Override

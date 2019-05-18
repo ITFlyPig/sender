@@ -12,11 +12,14 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.lzy.okgo.OkGo;
+import com.wangyuelin.sender.MainActivity;
 import com.wangyuelin.sender.R;
 import com.wangyuelin.sender.helper.StatusUIHelper;
 import com.wangyuelin.sender.helper.TitleHelper;
 import com.wangyuelin.sender.net.FastBaseResp;
 import com.wangyuelin.sender.net.FastJsonCallback;
+import com.wangyuelin.sender.util.Constant;
+import com.wangyuelin.sender.util.SPUtils;
 import com.wangyuelin.sender.util.Server;
 import com.wangyuelin.sender.util.Urls;
 
@@ -51,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         titleHelper = new TitleHelper();
         titleHelper.setContentView(R.layout.activity_login, this);
-        titleHelper.getIvBack().setOnClickListener(this);
+        titleHelper.getIvBack().setVisibility(View.INVISIBLE);
         titleHelper.getTvTitle().setText("登陆");
         ButterKnife.bind(this, titleHelper.getContent());
         tvRegister.setOnClickListener(this);
@@ -104,6 +107,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (resp.code == 0) {//登陆成功
 
                             statusUIHelper.showToast("登陆成功");
+                            if (resp != null && resp.res != null) {
+                                String token = resp.res.get("token");
+                                SPUtils.getInstance().put(Constant.SpKey.TOKEN, token);
+                            }
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
                         } else {//登陆失败
                             if (resp.res != null) {
                                 statusUIHelper.showToast(resp.res.get("tip"));
